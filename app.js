@@ -13,7 +13,6 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 dotenv.config({ path: path.resolve(__dirname, '.env') });
-console.log(process.env.MONGODB_URI);
 mongoose
   .connect(process.env.MONGODB_URI, {
     useCreateIndex: true,

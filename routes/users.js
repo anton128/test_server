@@ -2,19 +2,18 @@ var express = require('express');
 var router = express.Router();
 // var User = require('./../model/user');
 var Mail = require('./../model/mail');
-const sgMail = require('@sendgrid/mail');
+// const sgMail = require('@sendgrid/mail');
 
 
-/* GET users listing. */
-// router.get('/', function(req, res, next) {
-//   User.find({}, function(err, users) {
-//     if (err)
-//       return res.status(500).json({ message: 'Get User Error', error: err });
+router.get('/mails', function(req, res, next) {
+  Mail.find({}, function(err, mails) {
+    if (err)
+      return res.status(500).json({ message: 'Get User Error', error: err });
 
-//     // object of all the users
-//     res.status(200).json({ users });
-//   });
-// });
+    // object of all the users
+    res.status(200).json({ mails });
+  });
+});
 
 // router.post('/add', function(req, res, next) {
 //   console.log(req.body.name, req.body.email);
